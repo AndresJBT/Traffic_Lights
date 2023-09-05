@@ -1,7 +1,7 @@
 --- 
 # TinyTapeout project information
 project:
-  wokwi_id:    373514320379841537        # If using wokwi, set this to your project's ID
+  wokwi_id:    375002261994338305        # If using wokwi, set this to your project's ID
 
 # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
 # Source files must be in ./src and you must list each source file separately
@@ -22,15 +22,14 @@ yaml_version: 4
 #
 # Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
 documentation: 
-  author:       "Fabian Alvarez"
-  title:        "7 segment seconds"
-  language:     "Verilog"
-  description:  "Count up to 10, one second at a time."
+  author:       "Juan Montealegre, Andrés Brenes, José Javier Fernández, Allan González"
+  title:        "Traffic Lights with pedestrian crossing"
+  language:     "Wokwi"
+  description:  "This project represents how traffic lights with pedestrian crossing work."
 
 # Longer description of how the project works. You can use standard markdown format.
   how_it_works: |
-      Uses a set of registers to divide the clock, and then some combinational logic
-      to convert from binary to decimal for the display.
+      The following diagram shows the workflow of the circuit. 
 
       Puts the bottom 8 bits of the counter on the bidirectional outputs.
 
@@ -40,8 +39,8 @@ documentation:
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
   inputs:               
-    - none
-    - none
+    - CLK
+    - Button
     - none
     - none
     - none
@@ -50,29 +49,19 @@ documentation:
     - none
 # A description of what the outputs do (e.g. status LED, SPI MISO, etc)
   outputs:
-    - segment a
-    - segment b
-    - segment c
-    - segment d
-    - segment e
-    - segment f
-    - segment g
-    - dot
-# A description of what the bidirectional I/O pins do (e.g. I2C SDA, I2C SCL, etc)
-  bidirectional:
-    - second counter bit 0
-    - second counter bit 1
-    - second counter bit 2
-    - second counter bit 3
-    - second counter bit 4
-    - second counter bit 5
-    - second counter bit 6
-    - second counter bit 7
+    - Green Vehicular LED
+    - Yellow Vehicular LED
+    - Red Vehicular LED
+    - Green Pedestrian LED
+    - Red Pedestrian LED
+    - none
+    - none
+    - none
 
 # The following fields are optional
   tag:          "timer, test"      # comma separated list of tags: test, encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
   external_hw:  ""      # Describe any external hardware needed
   discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
   doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
-  clock_hz:     10000000       # Clock frequency in Hz (if required)
+  clock_hz:     1       # Clock frequency in Hz (if required)
   picture:      ""      # relative path to a picture in your repository
